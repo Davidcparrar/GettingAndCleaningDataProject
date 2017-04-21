@@ -1,5 +1,5 @@
 tidy_df dataset {datasets}
-# Mean Value of the Human Activity Recognition Using Smartphones Dataset
+# Mean Values of the Human Activity Recognition Using Smartphones Dataset
 ## Description
 The data was obtained from the Human Activity Recognition Using Smartphones Dataset and corresponds to the mean value of 66 variables from an experiment of  30 volunteers (subjetcs) within an age bracket of 19-48 years. Each person performed six activities (walking, walkingupstairs, walkingdownstairs, sitting, standing, laying) wearing a smartphone (Samsung Galaxy S II) on the waist. Originaly the experiment performed measurments (signals) on the 30 subjects with an accelerometer and a gyroscope. The raw data was tidied up and processed for this dataset
 ## Usage
