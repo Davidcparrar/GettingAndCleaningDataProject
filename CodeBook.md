@@ -12,75 +12,425 @@ to obtain the data set run the following command:
 ## Format
 A data frame with  180  observations on  68  variables    
 
-&nbsp;&nbsp;[,1] | subject | integer    
-&nbsp;&nbsp;[,2] | activity | factor    
-&nbsp;&nbsp;[,3] | timeBodyAccelerometerMeanX | numeric    
-&nbsp;&nbsp;[,4] | timeBodyAccelerometerMeanY | numeric    
-&nbsp;&nbsp;[,5] | timeBodyAccelerometerMeanZ | numeric    
-&nbsp;&nbsp;[,6] | timeBodyAccelerometerStdevX | numeric    
-&nbsp;&nbsp;[,7] | timeBodyAccelerometerStdevY | numeric    
-&nbsp;&nbsp;[,8] | timeBodyAccelerometerStdevZ | numeric    
-&nbsp;&nbsp;[,9] | timeGravityAccelerometerMeanX | numeric    
-&nbsp;&nbsp;[,10] | timeGravityAccelerometerMeanY | numeric    
-&nbsp;&nbsp;[,11] | timeGravityAccelerometerMeanZ | numeric    
-&nbsp;&nbsp;[,12] | timeGravityAccelerometerStdevX | numeric    
-&nbsp;&nbsp;[,13] | timeGravityAccelerometerStdevY | numeric    
-&nbsp;&nbsp;[,14] | timeGravityAccelerometerStdevZ | numeric    
-&nbsp;&nbsp;[,15] | timeBodyAccelerometerJerkMeanX | numeric    
-&nbsp;&nbsp;[,16] | timeBodyAccelerometerJerkMeanY | numeric    
-&nbsp;&nbsp;[,17] | timeBodyAccelerometerJerkMeanZ | numeric    
-&nbsp;&nbsp;[,18] | timeBodyAccelerometerJerkStdevX | numeric    
-&nbsp;&nbsp;[,19] | timeBodyAccelerometerJerkStdevY | numeric    
-&nbsp;&nbsp;[,20] | timeBodyAccelerometerJerkStdevZ | numeric    
-&nbsp;&nbsp;[,21] | timeBodyGyroscopeMeanX | numeric    
-&nbsp;&nbsp;[,22] | timeBodyGyroscopeMeanY | numeric    
-&nbsp;&nbsp;[,23] | timeBodyGyroscopeMeanZ | numeric    
-&nbsp;&nbsp;[,24] | timeBodyGyroscopeStdevX | numeric    
-&nbsp;&nbsp;[,25] | timeBodyGyroscopeStdevY | numeric    
-&nbsp;&nbsp;[,26] | timeBodyGyroscopeStdevZ | numeric    
-&nbsp;&nbsp;[,27] | timeBodyGyroscopeJerkMeanX | numeric    
-&nbsp;&nbsp;[,28] | timeBodyGyroscopeJerkMeanY | numeric    
-&nbsp;&nbsp;[,29] | timeBodyGyroscopeJerkMeanZ | numeric    
-&nbsp;&nbsp;[,30] | timeBodyGyroscopeJerkStdevX | numeric    
-&nbsp;&nbsp;[,31] | timeBodyGyroscopeJerkStdevY | numeric    
-&nbsp;&nbsp;[,32] | timeBodyGyroscopeJerkStdevZ | numeric    
-&nbsp;&nbsp;[,33] | timeBodyAccelerometerMagnitudeMean | numeric    
-&nbsp;&nbsp;[,34] | timeBodyAccelerometerMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,35] | timeGravityAccelerometerMagnitudeMean | numeric    
-&nbsp;&nbsp;[,36] | timeGravityAccelerometerMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,37] | timeBodyAccelerometerJerkMagnitudeMean | numeric    
-&nbsp;&nbsp;[,38] | timeBodyAccelerometerJerkMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,39] | timeBodyGyroscopeMagnitudeMean | numeric    
-&nbsp;&nbsp;[,40] | timeBodyGyroscopeMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,41] | timeBodyGyroscopeJerkMagnitudeMean | numeric    
-&nbsp;&nbsp;[,42] | timeBodyGyroscopeJerkMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,43] | frequencyBodyAccelerometerMeanX | numeric    
-&nbsp;&nbsp;[,44] | frequencyBodyAccelerometerMeanY | numeric    
-&nbsp;&nbsp;[,45] | frequencyBodyAccelerometerMeanZ | numeric    
-&nbsp;&nbsp;[,46] | frequencyBodyAccelerometerStdevX | numeric    
-&nbsp;&nbsp;[,47] | frequencyBodyAccelerometerStdevY | numeric    
-&nbsp;&nbsp;[,48] | frequencyBodyAccelerometerStdevZ | numeric    
-&nbsp;&nbsp;[,49] | frequencyBodyAccelerometerJerkMeanX | numeric    
-&nbsp;&nbsp;[,50] | frequencyBodyAccelerometerJerkMeanY | numeric    
-&nbsp;&nbsp;[,51] | frequencyBodyAccelerometerJerkMeanZ | numeric    
-&nbsp;&nbsp;[,52] | frequencyBodyAccelerometerJerkStdevX | numeric    
-&nbsp;&nbsp;[,53] | frequencyBodyAccelerometerJerkStdevY | numeric    
-&nbsp;&nbsp;[,54] | frequencyBodyAccelerometerJerkStdevZ | numeric    
-&nbsp;&nbsp;[,55] | frequencyBodyGyroscopeMeanX | numeric    
-&nbsp;&nbsp;[,56] | frequencyBodyGyroscopeMeanY | numeric    
-&nbsp;&nbsp;[,57] | frequencyBodyGyroscopeMeanZ | numeric    
-&nbsp;&nbsp;[,58] | frequencyBodyGyroscopeStdevX | numeric    
-&nbsp;&nbsp;[,59] | frequencyBodyGyroscopeStdevY | numeric    
-&nbsp;&nbsp;[,60] | frequencyBodyGyroscopeStdevZ | numeric    
-&nbsp;&nbsp;[,61] | frequencyBodyAccelerometerMagnitudeMean | numeric    
-&nbsp;&nbsp;[,62] | frequencyBodyAccelerometerMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,63] | frequencyBodyBodyAccelerometerJerkMagnitudeMean | numeric    
-&nbsp;&nbsp;[,64] | frequencyBodyBodyAccelerometerJerkMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,65] | frequencyBodyBodyGyroscopeMagnitudeMean | numeric    
-&nbsp;&nbsp;[,66] | frequencyBodyBodyGyroscopeMagnitudeStdev | numeric    
-&nbsp;&nbsp;[,67] | frequencyBodyBodyGyroscopeJerkMagnitudeMean | numeric    
-&nbsp;&nbsp;[,68] | frequencyBodyBodyGyroscopeJerkMagnitudeStdev | numeric    
-
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>Variable</th>
+<th>Type</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[,1]</td>
+<td>subject</td>
+<td>integer</td>
+<td>1-30</td>
+</tr>
+<tr>
+<td>[,2]</td>
+<td>activity</td>
+<td>factor</td>
+<td>1 factors</td>
+</tr>
+<tr>
+<td>[,3]</td>
+<td>timeBodyAccelerometerMeanX</td>
+<td>numeric</td>
+<td>0.22159824394-0.3014610196</td>
+</tr>
+<tr>
+<td>[,4]</td>
+<td>timeBodyAccelerometerMeanY</td>
+<td>numeric</td>
+<td>-0.0405139534294--0.00130828765170213</td>
+</tr>
+<tr>
+<td>[,5]</td>
+<td>timeBodyAccelerometerMeanZ</td>
+<td>numeric</td>
+<td>-0.152513899520833--0.07537846886</td>
+</tr>
+<tr>
+<td>[,6]</td>
+<td>timeBodyAccelerometerStdevX</td>
+<td>numeric</td>
+<td>-0.996068635384615-0.626917070512821</td>
+</tr>
+<tr>
+<td>[,7]</td>
+<td>timeBodyAccelerometerStdevY</td>
+<td>numeric</td>
+<td>-0.990240946666667-0.616937015333333</td>
+</tr>
+<tr>
+<td>[,8]</td>
+<td>timeBodyAccelerometerStdevZ</td>
+<td>numeric</td>
+<td>-0.987658662307692-0.609017879074074</td>
+</tr>
+<tr>
+<td>[,9]</td>
+<td>timeGravityAccelerometerMeanX</td>
+<td>numeric</td>
+<td>-0.680043155060241-0.974508732</td>
+</tr>
+<tr>
+<td>[,10]</td>
+<td>timeGravityAccelerometerMeanY</td>
+<td>numeric</td>
+<td>-0.479894842941176-0.956593814210526</td>
+</tr>
+<tr>
+<td>[,11]</td>
+<td>timeGravityAccelerometerMeanZ</td>
+<td>numeric</td>
+<td>-0.49508872037037-0.9578730416</td>
+</tr>
+<tr>
+<td>[,12]</td>
+<td>timeGravityAccelerometerStdevX</td>
+<td>numeric</td>
+<td>-0.996764227384615--0.829554947808219</td>
+</tr>
+<tr>
+<td>[,13]</td>
+<td>timeGravityAccelerometerStdevY</td>
+<td>numeric</td>
+<td>-0.99424764884058--0.643578361424658</td>
+</tr>
+<tr>
+<td>[,14]</td>
+<td>timeGravityAccelerometerStdevZ</td>
+<td>numeric</td>
+<td>-0.990957249538462--0.610161166287671</td>
+</tr>
+<tr>
+<td>[,15]</td>
+<td>timeBodyAccelerometerJerkMeanX</td>
+<td>numeric</td>
+<td>0.0426880986186441-0.130193043809524</td>
+</tr>
+<tr>
+<td>[,16]</td>
+<td>timeBodyAccelerometerJerkMeanY</td>
+<td>numeric</td>
+<td>-0.0386872111282051-0.056818586275</td>
+</tr>
+<tr>
+<td>[,17]</td>
+<td>timeBodyAccelerometerJerkMeanZ</td>
+<td>numeric</td>
+<td>-0.0674583919268293-0.0380533591627451</td>
+</tr>
+<tr>
+<td>[,18]</td>
+<td>timeBodyAccelerometerJerkStdevX</td>
+<td>numeric</td>
+<td>-0.994604542264151-0.544273037307692</td>
+</tr>
+<tr>
+<td>[,19]</td>
+<td>timeBodyAccelerometerJerkStdevY</td>
+<td>numeric</td>
+<td>-0.989513565652174-0.355306716915385</td>
+</tr>
+<tr>
+<td>[,20]</td>
+<td>timeBodyAccelerometerJerkStdevZ</td>
+<td>numeric</td>
+<td>-0.993288313333333-0.0310157077775926</td>
+</tr>
+<tr>
+<td>[,21]</td>
+<td>timeBodyGyroscopeMeanX</td>
+<td>numeric</td>
+<td>-0.205775427307692-0.19270447595122</td>
+</tr>
+<tr>
+<td>[,22]</td>
+<td>timeBodyGyroscopeMeanY</td>
+<td>numeric</td>
+<td>-0.204205356087805-0.0274707556666667</td>
+</tr>
+<tr>
+<td>[,23]</td>
+<td>timeBodyGyroscopeMeanZ</td>
+<td>numeric</td>
+<td>-0.0724546025804878-0.179102058245614</td>
+</tr>
+<tr>
+<td>[,24]</td>
+<td>timeBodyGyroscopeStdevX</td>
+<td>numeric</td>
+<td>-0.994276591304348-0.267657219333333</td>
+</tr>
+<tr>
+<td>[,25]</td>
+<td>timeBodyGyroscopeStdevY</td>
+<td>numeric</td>
+<td>-0.994210471914894-0.476518714444444</td>
+</tr>
+<tr>
+<td>[,26]</td>
+<td>timeBodyGyroscopeStdevZ</td>
+<td>numeric</td>
+<td>-0.985538363333333-0.564875818162963</td>
+</tr>
+<tr>
+<td>[,27]</td>
+<td>timeBodyGyroscopeJerkMeanX</td>
+<td>numeric</td>
+<td>-0.157212539189362--0.0220916265065217</td>
+</tr>
+<tr>
+<td>[,28]</td>
+<td>timeBodyGyroscopeJerkMeanY</td>
+<td>numeric</td>
+<td>-0.0768089915604167--0.0132022768074468</td>
+</tr>
+<tr>
+<td>[,29]</td>
+<td>timeBodyGyroscopeJerkMeanZ</td>
+<td>numeric</td>
+<td>-0.0924998531372549--0.00694066389361702</td>
+</tr>
+<tr>
+<td>[,30]</td>
+<td>timeBodyGyroscopeJerkStdevX</td>
+<td>numeric</td>
+<td>-0.99654254057971-0.179148649684615</td>
+</tr>
+<tr>
+<td>[,31]</td>
+<td>timeBodyGyroscopeJerkStdevY</td>
+<td>numeric</td>
+<td>-0.997081575652174-0.295945926186441</td>
+</tr>
+<tr>
+<td>[,32]</td>
+<td>timeBodyGyroscopeJerkStdevZ</td>
+<td>numeric</td>
+<td>-0.995380794637681-0.193206498960417</td>
+</tr>
+<tr>
+<td>[,33]</td>
+<td>timeBodyAccelerometerMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.986493196666667-0.644604325128205</td>
+</tr>
+<tr>
+<td>[,34]</td>
+<td>timeBodyAccelerometerMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.986464542615385-0.428405922622222</td>
+</tr>
+<tr>
+<td>[,35]</td>
+<td>timeGravityAccelerometerMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.986493196666667-0.644604325128205</td>
+</tr>
+<tr>
+<td>[,36]</td>
+<td>timeGravityAccelerometerMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.986464542615385-0.428405922622222</td>
+</tr>
+<tr>
+<td>[,37]</td>
+<td>timeBodyAccelerometerJerkMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.99281471515625-0.434490400974359</td>
+</tr>
+<tr>
+<td>[,38]</td>
+<td>timeBodyAccelerometerJerkMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.994646916811594-0.450612065720513</td>
+</tr>
+<tr>
+<td>[,39]</td>
+<td>timeBodyGyroscopeMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.980740846769231-0.418004608615385</td>
+</tr>
+<tr>
+<td>[,40]</td>
+<td>timeBodyGyroscopeMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.981372675614035-0.299975979851852</td>
+</tr>
+<tr>
+<td>[,41]</td>
+<td>timeBodyGyroscopeJerkMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.997322526811594-0.0875816618205128</td>
+</tr>
+<tr>
+<td>[,42]</td>
+<td>timeBodyGyroscopeJerkMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.997666071594203-0.250173204117966</td>
+</tr>
+<tr>
+<td>[,43]</td>
+<td>frequencyBodyAccelerometerMeanX</td>
+<td>numeric</td>
+<td>-0.995249932641509-0.537012022051282</td>
+</tr>
+<tr>
+<td>[,44]</td>
+<td>frequencyBodyAccelerometerMeanY</td>
+<td>numeric</td>
+<td>-0.989034304057971-0.524187686888889</td>
+</tr>
+<tr>
+<td>[,45]</td>
+<td>frequencyBodyAccelerometerMeanZ</td>
+<td>numeric</td>
+<td>-0.989473926666667-0.280735952206667</td>
+</tr>
+<tr>
+<td>[,46]</td>
+<td>frequencyBodyAccelerometerStdevX</td>
+<td>numeric</td>
+<td>-0.996604570307692-0.658506543333333</td>
+</tr>
+<tr>
+<td>[,47]</td>
+<td>frequencyBodyAccelerometerStdevY</td>
+<td>numeric</td>
+<td>-0.990680395362319-0.560191344</td>
+</tr>
+<tr>
+<td>[,48]</td>
+<td>frequencyBodyAccelerometerStdevZ</td>
+<td>numeric</td>
+<td>-0.987224804307692-0.687124163703704</td>
+</tr>
+<tr>
+<td>[,49]</td>
+<td>frequencyBodyAccelerometerJerkMeanX</td>
+<td>numeric</td>
+<td>-0.994630797358491-0.474317256051282</td>
+</tr>
+<tr>
+<td>[,50]</td>
+<td>frequencyBodyAccelerometerJerkMeanY</td>
+<td>numeric</td>
+<td>-0.989398823913043-0.276716853307692</td>
+</tr>
+<tr>
+<td>[,51]</td>
+<td>frequencyBodyAccelerometerJerkMeanZ</td>
+<td>numeric</td>
+<td>-0.992018447826087-0.157775692377778</td>
+</tr>
+<tr>
+<td>[,52]</td>
+<td>frequencyBodyAccelerometerJerkStdevX</td>
+<td>numeric</td>
+<td>-0.995073759245283-0.476803887476923</td>
+</tr>
+<tr>
+<td>[,53]</td>
+<td>frequencyBodyAccelerometerJerkStdevY</td>
+<td>numeric</td>
+<td>-0.990468082753623-0.349771285415897</td>
+</tr>
+<tr>
+<td>[,54]</td>
+<td>frequencyBodyAccelerometerJerkStdevZ</td>
+<td>numeric</td>
+<td>-0.993107759855072--0.00623647528983051</td>
+</tr>
+<tr>
+<td>[,55]</td>
+<td>frequencyBodyGyroscopeMeanX</td>
+<td>numeric</td>
+<td>-0.99312260884058-0.474962448333333</td>
+</tr>
+<tr>
+<td>[,56]</td>
+<td>frequencyBodyGyroscopeMeanY</td>
+<td>numeric</td>
+<td>-0.994025488297872-0.328817010088889</td>
+</tr>
+<tr>
+<td>[,57]</td>
+<td>frequencyBodyGyroscopeMeanZ</td>
+<td>numeric</td>
+<td>-0.985957788-0.492414379822222</td>
+</tr>
+<tr>
+<td>[,58]</td>
+<td>frequencyBodyGyroscopeStdevX</td>
+<td>numeric</td>
+<td>-0.994652185217391-0.196613286661538</td>
+</tr>
+<tr>
+<td>[,59]</td>
+<td>frequencyBodyGyroscopeStdevY</td>
+<td>numeric</td>
+<td>-0.994353086595745-0.646233637037037</td>
+</tr>
+<tr>
+<td>[,60]</td>
+<td>frequencyBodyGyroscopeStdevZ</td>
+<td>numeric</td>
+<td>-0.986725274871795-0.522454216314815</td>
+</tr>
+<tr>
+<td>[,61]</td>
+<td>frequencyBodyAccelerometerMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.986800645362319-0.586637550769231</td>
+</tr>
+<tr>
+<td>[,62]</td>
+<td>frequencyBodyAccelerometerMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.987648484461539-0.178684580868889</td>
+</tr>
+<tr>
+<td>[,63]</td>
+<td>frequencyBodyBodyAccelerometerJerkMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.993998275797101-0.538404846128205</td>
+</tr>
+<tr>
+<td>[,64]</td>
+<td>frequencyBodyBodyAccelerometerJerkMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.994366667681159-0.316346415348718</td>
+</tr>
+<tr>
+<td>[,65]</td>
+<td>frequencyBodyBodyGyroscopeMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.986535242105263-0.203979764835897</td>
+</tr>
+<tr>
+<td>[,66]</td>
+<td>frequencyBodyBodyGyroscopeMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.981468841692308-0.236659662496296</td>
+</tr>
+<tr>
+<td>[,67]</td>
+<td>frequencyBodyBodyGyroscopeJerkMagnitudeMean</td>
+<td>numeric</td>
+<td>-0.997617389275362-0.146618569064407</td>
+</tr>
+<tr>
+<td>[,68]</td>
+<td>frequencyBodyBodyGyroscopeJerkMagnitudeStdev</td>
+<td>numeric</td>
+<td>-0.99758523057971-0.287834616098305</td>
+</tr>
+</tbody></table>
 ## Source
 The variables for this data set come from the the coursera link [Dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), for more information on the raw dataset please refer to [UCI machine learning repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones), or the authors of the study:
 > Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
