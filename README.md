@@ -8,7 +8,7 @@
 
 - "code_book.R" : script that creates the file "CodeBook.md" (Usage: source("code_book.R"); code_book(tidy_df))
 
-- "CodeBook.md" : File that contains the variables of the dataset that the file "run_analysis.R" generates and the description of the steps used to clean up the raw dataset
+- "CodeBook.md" : File that contains the variables of the dataset that the file "run_analysis.R" generates
 
 - "tidy_dataset.txt" : File that contains the dataset generated with the "run_analysis.R" script
 ***
@@ -44,7 +44,7 @@ if(sum(grepl("package::dplyr", packages)) == 0) library(dplyr)
 ```
 - The raw data was read using the commands scan (for single column files, e.g. features.txt) and read.table (for multiple column files, e.g. X_test.txt)
 
-- The appropiate labels (column names) were imported from the features,txt file
+- The appropiate labels (column names) were imported from the features.txt file and the activity integers were converted into factors (walking, sitting, etc.)
 
 - Using the mutate function the variables subject and activity were added to both raw data sets:
 
@@ -52,8 +52,23 @@ if(sum(grepl("package::dplyr", packages)) == 0) library(dplyr)
 test_tbl_df <- mutate(test_tbl_df, activity = test_labels, subject = test_subject)
 train_tbl_df <- mutate(train_tbl_df, activity = train_labels, subject = train_subject)
 ```
--With the appropiate label names and complete columns the data sets were combined into one big data set
+- With the appropiate label names and complete columns the data sets were combined into one big data set:
 
 ```ruby
 uci_har <- merge(test_tbl_df,train_tbl_df, all = TRUE)
 ```
+
+- A subsetting vector col_new_df was created to obtain only the mean and standard deviation of the measurements (mean_std_df data set). Special care was taken in the regular expression given the fact that some measurements had the word mean on them but were not the mean() or std() of a measurement, e.g. meanFreq() and the angle() related variables (See file features_info.txt in the raw data set). Both the activity and subject columns were manualy included in the subsetting vector: 
+
+```ruby
+col_new_df <- grepl("mean[.?]()|std[.?]()",names(uci_har))
+```
+
+- The names of the variables were tidied up according to the [lower camel case][1] and the data set of the mean value of the variables grouped by activity and subject (tidy_df) was created and written into the file tidy_dataset.txt.
+
+```ruby
+tidy_df <- group_by(mean_std_df, subject, activity) %>% summarise_each(funs(mean))
+write.table(tidy_df, file = "tidy_dataset.txt", row.names = FALSE)
+```
+
+[1]: https://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf  "The State of Naming Conventions in R"
