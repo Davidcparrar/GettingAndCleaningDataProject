@@ -21,7 +21,7 @@ train_df <- read.table("UCI HAR Dataset/train/X_train.txt", col.names = features
 test_labels <- scan("UCI HAR Dataset/test/y_test.txt", integer())
 train_labels <- scan("UCI HAR Dataset/train/y_train.txt", integer())
 
-#Tidy labels variable
+#Tidy labels variable and converts activities to factor (Point 3)
 labels$label <- sub("_","",tolower(labels$label))
 test_labels <- factor(test_labels,levels = labels$level, labels = labels$label)
 train_labels <- factor(train_labels,levels = labels$level, labels = labels$label)
@@ -34,7 +34,7 @@ train_tbl_df <- tbl_df(train_df)
 test_tbl_df <- mutate(test_tbl_df, activity = test_labels, subject = test_subject)
 train_tbl_df <- mutate(train_tbl_df, activity = train_labels, subject = train_subject)
 
-#Merges the train and test datasets into one
+#Merges the train and test datasets into one (Point 1)
 uci_har <- merge(test_tbl_df,train_tbl_df, all = TRUE)
 
 #Subsets for the mean and standard deviation variables. To avoid angle() related 
@@ -45,10 +45,10 @@ col_new_df <- grepl("mean[.?]()|std[.?]()",names(uci_har))
 col_new_df[length(col_new_df)] <- TRUE
 col_new_df[length(col_new_df)-1] <- TRUE
 
-#Subsets accordingly and transform the data into a tbl df format
+#Subsets accordingly and transform the data into a tbl_df format (Point 2)
 mean_std_df <- tbl_df(uci_har[,col_new_df])
 
-#Assings the names of our dataset and tidies up the name of the columns
+#Assings the names of our dataset and tidies up the name of the columns (Point 4)
 namesdf <- names(mean_std_df)
 namesdf <- gsub("^t","time",namesdf)
 namesdf <- gsub("^f","frequency",namesdf)
@@ -60,9 +60,9 @@ namesdf <- gsub("\\.std\\.\\.","Stdev",namesdf)
 namesdf <- gsub("\\.","",namesdf)
 names(mean_std_df) <- namesdf
 
-#Now that the data set is finally clean we subset by subject and activity and create the mean of the variables dataset
+#Now that the data set is finally clean we subset by subject and activity and create the mean of the variables dataset (Point 5)
 tidy_df <- group_by(mean_std_df, subject, activity) %>% summarise_each(funs(mean))
 write.table(tidy_df, file = "tidy_dataset.txt", row.names = FALSE)
 
 #Clean the memory of all but the tidy dataset of point 5
-rm(labels,test_subject,train_subject,features,test_df,train_df,test_labels,train_labels,test_tbl_df,train_tbl_df,uci_har,col_new_df,mean_std_df,namesdf)
+rm(labels,test_subject,train_subject,features,test_df,train_df,test_labels,train_labels,test_tbl_df,train_tbl_df,uci_har,col_new_df,namesdf)
